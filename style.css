@@ -1,0 +1,743 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+    overflow-x: hidden; 
+}
+
+
+header {
+    background-color: rgba(248, 248, 248, 1);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+}
+
+header.scrolled {
+    background-color: rgba(248, 248, 248, 0.6);
+    backdrop-filter: blur(8px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    opacity: 0.9;
+}
+
+
+header .logo img {
+    height: 50px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+
+nav .home-btn:hover {
+    background-color: #ff9a9a;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffb6b6;
+}
+
+nav .home-btn.active {
+    background-color: #ff9a9a; 
+    color: white; 
+    border: 2px solid #ff9a9a; 
+}
+
+nav ul li a.active {
+    color: #ffffff;
+    background-color: #ff9a9a;
+    border-radius: 25px; 
+    transition: background-color 0.3s ease;
+    padding: 10px 20px;
+
+}
+section {
+    padding-top: 60px;
+    scroll-margin-top: 60px;
+}
+
+
+@media (max-width: 768px) {
+    section {
+        padding-top: 80px;
+    }
+}
+
+
+
+
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.burger-line {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+}
+
+
+@media (max-width: 768px) {
+    nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        width: 200px;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+}
+
+
+.hero {
+    background: url('images/cover.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 80px;
+    text-align: left;
+    padding-left: 20px;
+}
+.hero img {
+    width: 100%;
+    height: auto; 
+}
+
+
+.hero-title h1 {
+    font-family: 'Fairy Tales', serif; 
+    font-size: 70px;
+    font-weight: normal;
+    line-height: 1.2;
+    color: white;
+}
+
+.hero-content {
+    text-align: left;
+}
+
+.hero-content h2 {
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.btn-explore {
+    background-color: #ffb6b6;
+    padding: 15px 30px;
+    text-decoration: none;
+    color: #ffffff;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 40px; 
+}
+
+
+.treatments {
+    padding: 60px 30px;
+}
+
+.treatments h3 {
+    font-family: 'Lora', serif;
+    font-size: 48px;
+    font-weight: normal;
+    color: #4b1e1e;
+    text-align: left;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+
+.treatment-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    justify-items: center; 
+    gap: 30px;
+    padding: 20px;
+    text-align: center; 
+}
+
+
+.treatment-cards .card {
+    background-color: transparent;
+    padding: 20px;
+    border: 1px solid #ddd;
+    max-width: 250px;
+    text-align: center; 
+}
+
+
+.treatment-cards .card img {
+    width: 70px; 
+    height: 70px;
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 768px) {
+    .treatment-cards .card img {
+        width: 50px; 
+        height: 50px;
+    }
+}
+
+
+.treatment-cards .card h4 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #552626;
+}
+
+.treatment-cards .card p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+
+.principles {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.principle-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.principle-card {
+    padding: 20px;
+    border-radius: 8px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.principle-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.principle-card h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.principle-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+
+
+@media (max-width: 768px) {
+    .principle-cards {
+        display: flex;
+        justify-content: center; 
+        align-items: flex-start; 
+        flex-wrap: wrap; 
+        gap: 20px; 
+    }
+
+    .principle-card {
+        width: 45%; 
+        padding: 15px;
+    }
+
+    .principle-card img {
+        width: 40px; 
+        height: 40px;
+    }
+
+    .principle-card h4 {
+        font-size: 16px; 
+    }
+
+    .principle-card p {
+        font-size: 12px; 
+    }
+}
+
+
+.price {
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Lora', serif;
+}
+
+.price h3 {
+    font-size: 48px;
+    color: #4b1e1e;
+    margin-bottom: 20px;
+}
+
+.price table {
+    width: 60%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.price th, .price td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.price th {
+    font-weight: bold;
+    font-size: 18px;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+.price td {
+    font-size: 16px;
+    color: #555;
+}
+
+.price tr:last-child td {
+    border-bottom: none; 
+}
+
+.price td.price {
+    text-align: right;
+    font-weight: bold;
+    color: #4b1e1e;
+}
+
+
+.private-class {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    text-align: center;
+    font-family: 'Lora', serif;
+}
+
+.private-class h3 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #4b1e1e;
+    margin-bottom: 20px;
+}
+
+.private-class p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.private-class ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.private-class ul li {
+    margin-bottom: 10px;
+}
+
+
+.private-class-images {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 20px;
+    scroll-snap-type: x mandatory;
+    max-width: 100%;
+    justify-content: center; 
+    margin: 0 auto; 
+}
+
+.private-class-images img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    scroll-snap-align: start;
+}
+
+
+@media (max-width: 768px) {
+    .private-class-images {
+        display: flex;
+        text-align: center;
+        margin: 0 auto;
+        overflow-x: scroll;
+        width: 100%;
+        justify-content: flex-start; 
+    }
+
+    .private-class-images img {
+        width: 200px;
+        height: auto;
+        margin: 0 10px;
+    }
+}
+
+
+
+footer {
+    background-color: #ffb6b6;
+    padding: 20px;
+    text-align: center;
+}
+
+footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .contact p, footer .social p {
+    margin: 5px 0;
+}
+
+footer .social a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.introduction {
+    background-color: #f8f8f8;
+    padding: 50px 20px;
+    text-align: left;
+}
+
+.introduction .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+    flex-wrap: wrap; 
+}
+
+.introduction .intro-text {
+    color: #333;
+    max-width: 600px;
+    text-align: left;
+}
+
+.introduction .intro-text h2 {
+    font-size: 30px;
+    font-family: 'Arial', sans-serif;
+    margin-bottom: 10px;
+}
+
+.introduction .intro-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.introduction .intro-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+
+@media (max-width: 768px) {
+    .introduction .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .introduction .intro-text h2 {
+        font-size: 26px;
+    }
+
+    .introduction .intro-text p {
+        font-size: 14px;
+        margin-top: 10px;
+    }
+
+    .introduction .intro-image img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+.about-us {
+    padding: 50px 20px;
+    font-family: 'Lora', serif;
+    color: #4b1e1e;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.image-comparison {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+}
+
+.image-comparison img {
+    width: 250px; 
+    height: auto; 
+    object-fit: contain; 
+}
+
+.comparison-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.comparison-item img {
+    width: 140px; 
+    height: 190px; 
+    object-fit: contain; 
+    border-radius: 80px;
+}
+
+.label {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #4b1e1e;
+    font-size: 14px;
+}
+
+.about-text {
+    max-width: 500px;
+}
+
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #333;
+}
+
+
+footer {
+    background-color: #ffb6b6; 
+    padding: 30px 20px;
+    text-align: center;
+    color: #fff;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer h4 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+footer p {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+footer .social a {
+    margin: 0 15px;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+footer .social a:hover {
+    color: #ff9a9a; 
+}
+
+
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .social {
+        margin-top: 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 1200px) {
+    .hero-title h1 {
+        font-size: 60px;
+    }
+
+    .treatment-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .introduction .intro-text h2 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 900px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+
+    .treatment-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .price table th, .price table td {
+        padding: 8px;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer .contact, footer .social {
+        margin: 10px 0;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px;
+    }
+
+    header .logo h1 {
+        font-size: 24px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .btn-explore {
+        padding: 6px 12px;
+    }
+
+    .treatment-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .price table {
+        font-size: 14px;
+    }
+
+    footer .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
